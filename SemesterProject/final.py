@@ -3,9 +3,15 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
+def home(): 
+    print("user is going to /")
+    return render_template('home.html')
+
+
+@app.route('/about')
+def about():
+    print("user is goint to /about")
+    return render_template('about_me.html')
 
 # Testing
 app.run(host='localhost', port=8080, debug=True)
