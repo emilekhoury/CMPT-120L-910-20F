@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def home(): 
-    print("user is going to /")
+    app.logger.info("User connected to home route")
     return render_template('home.html')
 
 
 @app.route('/about')
 def about():
-    print("user is goint to /about")
+    app.logger.info("User connected to about route")
     return render_template('about_me.html')
 
 # Testing
